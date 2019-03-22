@@ -3,6 +3,6 @@ sudo sed -i s/\$releasever/6/g /etc/yum.repos.d/epel-apache-maven.repo
 sudo yum install -y apache-maven
 mvn --version
 
-
+set path in .bashrc file (will be in your home ~)
 export M2_HOME=/home/ec2-user/apache-maven-3.5.2
 export PATH=$M2_HOME/bin:$PATH
