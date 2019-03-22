@@ -2,3 +2,7 @@ sudo wget http://repos.fedorapeople.org/repos/dchen/apache-maven/epel-apache-mav
 sudo sed -i s/\$releasever/6/g /etc/yum.repos.d/epel-apache-maven.repo
 sudo yum install -y apache-maven
 mvn --version
+
+
+export M2_HOME=/home/ec2-user/apache-maven-3.5.2
+export PATH=$M2_HOME/bin:$PATH
