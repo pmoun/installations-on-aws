@@ -6,3 +6,13 @@ mvn --version
 set path in .bashrc file (will be in your home ~)
 export M2_HOME=/home/ec2-user/apache-maven-3.5.2
 export PATH=$M2_HOME/bin:$PATH
+
+java installation
+sudo yum install java-1.8.0
+sudo yum update
+cd /usr/lib
+cd jre
+
+.bashrc
+export JAVA_HOME=/usr/lib/jvm/jdk-version
+export PATH=$JAVA_HOME/bin:$PATH
