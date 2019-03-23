@@ -16,3 +16,31 @@ cd jre
 .bashrc
 export JAVA_HOME=/usr/lib/jvm/jdk-version
 export PATH=$JAVA_HOME/bin:$PATH
+
+
+
+ssh keygeneration
+to connect to nodes from master
+key-gen
+($ sudo passwd ec2-user
+Changing password for user ec2-user.
+New password:
+Retype new password:) to change passwd of ec2-user
+changing user permissions to run any command for password less authentication
+we have to edit sudoers file is(/etc)
+add your user in sudoers
+(usrname) ALL ALL
+and for password authentication
+(user name) ALL NOPASSWD:ALL
+                           you have to enable port 22 and publickey auth
+                           for that we have to edit file(sshd_config) in
+                           /etc/ssh/sshd_config
+                           1. vi sshd_config
+                           2. port 22(enable port 22/ uncommit)
+                           3. pubkey authentication(uncommit)
+                           4. password authentication yes(uncommit)
+                           5. password authentication No(commit/ put #)
+                           after the settings
+                           sudo systemctl restarst sshd
+
+etc/sudeors
