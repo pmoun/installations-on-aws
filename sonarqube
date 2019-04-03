@@ -1,0 +1,26 @@
+1. Login to your instance
+2. Become root using “sudo su -” command
+3. Update your repositories
+
+# yum update
+4. Get Sonar repository
+
+# sudo wget -O /etc/yum.repos.d/sonar.repo http://downloads.sourceforge.net/project/sonar-pkg/rpm/sonar.repo
+5. Install Sonar package
+
+# yum install sonar
+6. Start Sonar and make sure it starts automatically at system startup
+
+# service sonar start
+# chkconfig sonar on
+Note: Sonar is using an embedded H2 database. But you should install for example mysql and adapt your /opt/sonar/conf/sonar.properties. Here you find more info: http://docs.codehaus.org/display/SONAR/Installing and create scripts:
+
+# Create SonarQube database and user.
+# Command: mysql -u root -p < create_database.sql
+CREATE DATABASE sonar CHARACTER SET utf8 COLLATE utf8_general_ci;
+CREATE USER 'sonar' IDENTIFIED BY 'sonar';
+
+GRANT ALL ON sonar.* TO 'sonar'@'%' IDENTIFIED BY 'sonar';
+GRANT ALL ON sonar.* TO 'sonar'@'localhost' IDENTIFIED BY 'sonar';
+
+FLUSH PRIVILEGES;
