@@ -44,3 +44,25 @@ and for password authentication
                            sudo systemctl restarst sshd
 
 etc/sudeors
+
+
+
+
+
+
+
+Enter ls -al ~/.ssh to see if existing SSH keys are present:
+
+$ ls -al ~/.ssh
+# Lists the files in your .ssh directory, if they exist
+Check the directory listing to see if you already have a public SSH key.
+
+By default, the filenames of the public keys are one of the following:
+
+id_dsa.pub
+id_ecdsa.pub
+id_ed25519.pub
+id_rsa.pub
+If you don't have an existing public and private key pair, or don't wish to use any that are available to connect to GitHub, then generate a new SSH key.
+If you see an existing public and private key pair listed (for example id_rsa.pub and id_rsa) that you would like to use to connect to GitHub, you can add your SSH key to the ssh-agent.
+Tip: If you receive an error that ~/.ssh doesn't exist, don't worry! We'll create it when we generate a new SSH key.
